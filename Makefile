@@ -17,8 +17,7 @@ SRC		=	$(SRCDIR)main.c \
 			$(SRCDIR)game.c \
 			$(SRCDIR)create_piano.c \
 			$(SRCDIR)music_partition.c \
-			$(SRCDIR)create_whitenotes.c \
-			$(SRCDIR)create_blacknotes.c \
+			$(SRCDIR)create_notes.c \
 			$(SRCDIR)display_partition.c \
 			$(SRCDIR)key_collision.c \
 			$(SRCDIR)hit_functions.c \
@@ -26,6 +25,7 @@ SRC		=	$(SRCDIR)main.c \
 			$(SRCDIR)evt_close.c \
 			$(SRCDIR)destroy_game.c \
 			$(SRCDIR)my_strncat.c \
+			$(SRCDIR)solfege.c \
 
 OBJ		=	$(SRC:.c=.o)
 

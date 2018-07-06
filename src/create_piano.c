@@ -63,12 +63,8 @@ piano_t create_piano(const char *partition)
 {
 	piano_t piano;
 
-	solfege_white_part_one(piano.white_notes);
-	solfege_white_part_two(piano.white_notes);
-	solfege_black_part_one(piano.black_notes);
-	solfege_black_part_two(piano.black_notes);
-	if (checkerror_whitenotes(piano.white_notes) == false
-	|| checkerror_blacknotes(piano.black_notes) == false)
+	solfege(piano.white_notes, piano.black_notes);
+	if (checkerror_notes(piano.white_notes, piano.black_notes) == false)
 		exit(84);
 	if (create_whitetouch(piano.white_touch) == false
 	|| create_blacktouch(piano.black_touch) == false)

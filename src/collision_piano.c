@@ -30,7 +30,7 @@ static bool mouse_collision(piano_t *piano, sfEvent *event, sfVector2i *mouse)
 }
 
 void collision_piano(piano_t *piano, sfRenderWindow *window,
-		     sfEvent *event)
+		sfEvent *event)
 {
 	sfVector2i mouse = sfMouse_getPositionRenderWindow(window);
 
