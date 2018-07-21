@@ -9,7 +9,7 @@
 #include "prototype.h"
 #include "piano.h"
 
-/*must erased if forest*/
+
 /*sfKeyboard_isKeyPressed(sfKeyRShift) == sfTrue &&*/
 
 static void key_part_one(piano_t *piano, sfEvent *event)
@@ -142,6 +142,52 @@ static void key_part_five(piano_t *piano, sfEvent *event)
 	}
 }
 
+static void key_part_six(piano_t *piano, sfEvent *event)
+{
+	int index = -1;
+
+	if (sfKeyboard_isKeyPressed(sfKeyRShift) == sfTrue) {
+		if (sfKeyboard_isKeyPressed(sfKeyZ) == sfTrue)
+			sfMusic_play(piano->white_notes[index = 21]);
+		if (sfKeyboard_isKeyPressed(sfKeyE) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 9]);
+		if (sfKeyboard_isKeyPressed(sfKeyT) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 10]);
+		if (sfKeyboard_isKeyPressed(sfKeyY) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 11]);
+		if (sfKeyboard_isKeyPressed(sfKeyI) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 12]);
+		if (sfKeyboard_isKeyPressed(sfKeyO) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 13]);
+		if (sfKeyboard_isKeyPressed(sfKeyP) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 14]);
+		if (sfKeyboard_isKeyPressed(sfKeyQ) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 7]);
+		if (sfKeyboard_isKeyPressed(sfKeyS) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 15]);
+		if (sfKeyboard_isKeyPressed(sfKeyD) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 16]);
+		if (sfKeyboard_isKeyPressed(sfKeyG) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 17]);
+		if (sfKeyboard_isKeyPressed(sfKeyH) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 18]);
+		if (sfKeyboard_isKeyPressed(sfKeyJ) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 19]);
+		if (sfKeyboard_isKeyPressed(sfKeyL) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 20]);
+		if (sfKeyboard_isKeyPressed(sfKeyW) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 8]);
+		if (sfKeyboard_isKeyPressed(sfKeyC) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 22]);
+		if (sfKeyboard_isKeyPressed(sfKeyV) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 23]);
+		if (sfKeyboard_isKeyPressed(sfKeyB) == sfTrue)
+			sfMusic_play(piano->black_notes[index = 24]);
+		if (index > -1)
+			sfRectangleShape_setFillColor(piano->black_touch[index], sfBlue);
+	}
+}
+
 bool key_collision(piano_t *piano, sfEvent *event)
 {
 	if (event->type == sfEvtKeyPressed) {
@@ -150,6 +196,7 @@ bool key_collision(piano_t *piano, sfEvent *event)
 		key_part_three(piano, event);
 		key_part_fourth(piano, event);
 		key_part_five(piano, event);
+		key_part_six(piano, event);
 	}
 	return (true);
 }
