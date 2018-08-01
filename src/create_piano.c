@@ -70,11 +70,11 @@ piano_t create_piano(const char *partition)
 	|| create_blacktouch(piano.black_touch) == false)
 		exit(84);
 	piano.nb_notes = strlen(partition) + 1;
-	piano.text = malloc(sizeof(sfText *) * (piano.nb_notes + 1));
+	piano.text = malloc(sizeof(text_note_t) * (piano.nb_notes + 1));
 	piano.font = sfFont_createFromFile(FONT);
 	for (size_t i = 0; i < piano.nb_notes; i++) {
-		piano.text[i] = sfText_create();
-		sfText_setFont(piano.text[i], piano.font);
+		piano.text[i].text = sfText_create();
+		sfText_setFont(piano.text[i].text, piano.font);
 	}
 	return (piano);
 }

@@ -18,13 +18,18 @@
 #define NB_PARTITION 1
 
 typedef struct {
+	sfText *text;
+	size_t x;
+	size_t y;
+} text_note_t;
+
+typedef struct {
 	sfMusic *white_notes[WHITE_NOTES];
 	sfMusic *black_notes[BLACK_NOTES];
 	sfRectangleShape *white_touch[WHITE_NOTES];
 	sfRectangleShape *black_touch[BLACK_NOTES];
 	sfFont *font;
-	//sfText *text[NB_PARTITION];
-	sfText **text;
+	text_note_t *text;
 	size_t nb_notes;
 } piano_t;
 

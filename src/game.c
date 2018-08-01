@@ -9,7 +9,7 @@
 #include "prototype.h"
 #include "piano.h"
 
-const char *str_g = "ohooodooooohooodooooohooodooooohooodoooooogoDodosoDodosohogoDodosoDodosohogoDodosoDodosohogoDodosoDodos";//tmp
+const char *str_g = "azertyuiopqsdfghjklmwxcvbnpoiuytrezaqsdfghjklAZERTYUIOPQSDFGHJKLMNBVCXWaPErPsdERTYyRZtYUEZeRYOYUREZzrjfyAjdue4651rie98";//tmp
 
 static bool create_background(sfSprite *back, sfTexture *texture)
 {
@@ -30,7 +30,7 @@ static void display_game(sfRenderWindow *window, sfSprite *back, piano_t *piano)
 		sfRenderWindow_drawRectangleShape(window, piano->white_touch[i], NULL);
 	for (size_t i = 0; i < BLACK_NOTES; i++)
 		sfRenderWindow_drawRectangleShape(window, piano->black_touch[i], NULL);
-	//display_partition(window, piano);
+	display_partition(window, piano);
 	sfRenderWindow_display(window);
 	for (size_t i = 0; i < BLACK_NOTES; i++)
 		sfRectangleShape_setFillColor(piano->black_touch[i], sfBlack);

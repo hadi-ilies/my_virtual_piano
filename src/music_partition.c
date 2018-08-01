@@ -17,7 +17,7 @@ static void insert_partition_text(char *notes, piano_t *piano,
 {
 	if (test == true) {
 		//printf("%s\n", notes);
-		sfText_setString(piano->text[*text], notes); //tmp
+		sfText_setString(piano->text[*text].text, notes); //tmp
 		(*text)++;
 	}
 }
