@@ -16,6 +16,7 @@
 #define WHITE_NOTES 35
 #define BLACK_NOTES 25
 #define NB_PARTITION 1
+#define NB_MUSIC 4
 
 typedef struct {
 	sfText *text;

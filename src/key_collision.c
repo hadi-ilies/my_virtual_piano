@@ -73,7 +73,7 @@ static void key_part_three(piano_t *piano, sfEvent *event)
 	int index = -1;
 
 	if (event->key.code == sfKeyQ)
-		sfMusic_play(piano->white_notes[index = 11]);
+		sfMusic_play(piano->white_notes[index = 10]);
 	if (event->key.code == sfKeyS)
 		sfMusic_play(piano->white_notes[index = 21]);
 	if (event->key.code == sfKeyD)
@@ -101,7 +101,7 @@ static void key_part_fourth(piano_t *piano, sfEvent *event)
 	if (event->key.code == sfKeyM)
 		sfMusic_play(piano->white_notes[index = 34]);
 	if (event->key.code == sfKeyW)
-		sfMusic_play(piano->white_notes[index = 12]);
+		sfMusic_play(piano->white_notes[index = 11]);
 	if (event->key.code == sfKeyX)
 		sfMusic_play(piano->white_notes[index = 30]);
 	if (event->key.code == sfKeyC)

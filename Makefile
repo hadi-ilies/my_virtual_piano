@@ -26,6 +26,10 @@ SRC		=	$(SRCDIR)main.c \
 			$(SRCDIR)destroy_game.c \
 			$(SRCDIR)my_strncat.c \
 			$(SRCDIR)solfege.c \
+			$(SRCDIR)place_notes.c \
+			$(SRCDIR)text_collision.c \
+			$(SRCDIR)music.c \
+			$(SRCDIR)menu_create.c \
 
 OBJ		=	$(SRC:.c=.o)
 

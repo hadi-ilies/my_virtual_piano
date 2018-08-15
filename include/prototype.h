@@ -1,5 +1,5 @@
 /*
-11;rgb:2e2e/3434/3636** EPITECH PROJECT, 2017
+** EPITECH PROJECT, 2017
 ** for_norme
 ** File description:
 ** prototype.h
@@ -17,14 +17,15 @@
 #define WINDOW_BITS_PER_PIXEL 32
 #define WINDOW_PARAMS sfClose //| sfResize
 #define FRAMERATE_LIMIT 30
-#define WINDOW_NAME "Game"
+#define WINDOW_NAME "My_Synthesia"
 #define COL(r, g, b, a) (sfColor){r, g, b, a}
 #define V2F(x, y) (sfVector2f){x, y}
 
 extern const char *str_g;
+extern const char *music_g[];
 
 size_t menu(sfRenderWindow *window);
-void game(sfRenderWindow *window);
+void game(sfRenderWindow *window, size_t music, bool game);
 bool evt_close(sfEvent *event, sfRenderWindow *window);
 sfRenderWindow *window_create(void);
 void destroy_game(sfSprite *back, sfTexture *texture,
@@ -38,4 +39,8 @@ char *my_strncat(char *s1, char *s2, size_t n);
 void insert_partition(piano_t *piano);
 bool checkerror_notes(sfMusic *white_notes[WHITE_NOTES], sfMusic *black_notes[BLACK_NOTES]);
 void solfege(sfMusic *white_notes[WHITE_NOTES], sfMusic *black_notes[BLACK_NOTES]);
+void coord_notes(piano_t *piano, char c, size_t index);
+bool text_collision(piano_t *piano);
+bool create_background(sfSprite *back, sfTexture *texture, char *img);
+void display_partition_game(sfRenderWindow *window, piano_t *piano);
 #endif
