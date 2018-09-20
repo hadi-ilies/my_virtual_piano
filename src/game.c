@@ -53,12 +53,14 @@ void game(sfRenderWindow *window, size_t music, bool game)
 		return;
 	while (sfRenderWindow_isOpen(window)) {
 		while (sfRenderWindow_pollEvent(window, &event)) {
-			if (!evt_close(&event, window))
-				return; /*must free*/
+			if (!evt_close(&event, window)) {
+				destroy_game(back, texture, &piano);
+				return;
+			}
 			collision_piano(&piano, window, &event);
 		}
 		insert_partition(&piano);//tmp
 		display_game(window, back, &piano, game);
 	}
-	destroy_game(back, texture, window, &piano);
+	destroy_game(back, texture, &piano);
 }

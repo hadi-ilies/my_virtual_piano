@@ -14,10 +14,11 @@
 menu_t menu_create(void)
 {
 	menu_t menu;
-	size_t y = WINDOW_HEIGHT / 2 - 60; // 60 width sprite
+	size_t y = WINDOW_HEIGHT / 2 - 120; // 60 width sprite
 
 	menu.texture_button[0] = sfTexture_createFromFile(BUTTON1, NULL);
 	menu.texture_button[1] = sfTexture_createFromFile(BUTTON2, NULL);
+	menu.texture_button[2] = sfTexture_createFromFile(BUTTON3, NULL);
 	for (size_t i = 0; i < NB_BUTTON; i++) {
 		menu.button[i] = sfRectangleShape_create();
 		if (menu.button[i] == NULL || menu.texture_button[i] == NULL)

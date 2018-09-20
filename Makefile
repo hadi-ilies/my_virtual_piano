@@ -6,7 +6,7 @@
 
 NAME		=	piano
 
-CC		=	gcc
+CC		=	gcc -g3
 
 SRCDIR		=	src/
 INCDIR		=	include/
@@ -30,6 +30,9 @@ SRC		=	$(SRCDIR)main.c \
 			$(SRCDIR)text_collision.c \
 			$(SRCDIR)music.c \
 			$(SRCDIR)menu_create.c \
+			$(SRCDIR)create_back_and_screen.c \
+			$(SRCDIR)choose_music.c \
+			$(SRCDIR)destroy_menu.c \
 
 OBJ		=	$(SRC:.c=.o)
 

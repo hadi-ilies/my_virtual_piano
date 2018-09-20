@@ -74,6 +74,8 @@ piano_t create_piano(const char *partition)
 	piano.font = sfFont_createFromFile(FONT);
 	for (size_t i = 0; i < piano.nb_notes; i++) {
 		piano.text[i].text = sfText_create();
+		piano.text[i].x = 0;
+		piano.text[i].y = 0;
 		sfText_setFont(piano.text[i].text, piano.font);
 	}
 	return (piano);

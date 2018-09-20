@@ -11,7 +11,7 @@
 
 
 /*sfKeyboard_isKeyPressed(sfKeyRShift) == sfTrue &&*/
-
+/*
 static void key_part_one(piano_t *piano, sfEvent *event)
 {
 	int index = -1;
@@ -39,7 +39,7 @@ static void key_part_one(piano_t *piano, sfEvent *event)
 	if (index > -1)
 		sfRectangleShape_setFillColor(piano->white_touch[index], sfGreen);
 }
-
+*/
 static void key_part_two(piano_t *piano, sfEvent *event)
 {
 	int index = -1;
@@ -142,7 +142,7 @@ static void key_part_five(piano_t *piano, sfEvent *event)
 	}
 }
 
-static void key_part_six(piano_t *piano, sfEvent *event)
+static void key_part_six(piano_t *piano)
 {
 	int index = -1;
 
@@ -196,7 +196,7 @@ bool key_collision(piano_t *piano, sfEvent *event)
 		key_part_three(piano, event);
 		key_part_fourth(piano, event);
 		key_part_five(piano, event);
-		key_part_six(piano, event);
+		key_part_six(piano);
 	}
 	return (true);
 }

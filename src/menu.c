@@ -9,7 +9,6 @@
 #include "prototype.h"
 #include "menu.h"
 
-/* iam too lazy so i wont make a menu */
 void display_menu(sfRenderWindow *window, sfSprite *back, menu_t *menu)
 {
 	sfRenderWindow_clear(window, sfBlack);
@@ -25,6 +24,7 @@ size_t menu(sfRenderWindow *window)
 	sfSprite *back = sfSprite_create();
 	sfTexture *texture = NULL;
 	menu_t menu = menu_create();
+	int music = -1;
 
 	if (create_background(back, texture, BACK_MENU) == false)
 		return (84);
@@ -32,14 +32,18 @@ size_t menu(sfRenderWindow *window)
 		sfVector2i mouse_position = sfMouse_getPositionRenderWindow(window);
 
 		while (sfRenderWindow_pollEvent(window, &event)) {
-			if (!evt_close(&event, window))
-				return (0); /*must free*/
-			if (event.type == sfEvtMouseButtonPressed
+			if (!evt_close(&event, window)) {
+				destroy_menu(window, back, texture, &menu);
+				return (0);
+			} if (event.type == sfEvtMouseButtonPressed
 			&& hit_point_rec(&mouse_position, menu.button[0]))
-				game(window, 0, true); // seconde parameter must be conf
+				music = choose_music(window);
 			if (event.type == sfEvtMouseButtonPressed
-			&& hit_point_rec(&mouse_position, menu.button[1]))
-				 game(window, 4, false);
+			    && hit_point_rec(&mouse_position, menu.button[1]) && music > -1)
+				game(window, (size_t) music, true);
+			if (event.type == sfEvtMouseButtonPressed
+			&& hit_point_rec(&mouse_position, menu.button[2]) && music > -1)
+				 game(window,(size_t) music, false);
 		}
 		display_menu(window, back, &menu);
 	}

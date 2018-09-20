@@ -18,6 +18,7 @@
 #define WINDOW_PARAMS sfClose //| sfResize
 #define FRAMERATE_LIMIT 30
 #define WINDOW_NAME "My_Synthesia"
+#define WINDOW_SIZE sfRenderWindow_getSize(window)
 #define COL(r, g, b, a) (sfColor){r, g, b, a}
 #define V2F(x, y) (sfVector2f){x, y}
 
@@ -28,8 +29,7 @@ size_t menu(sfRenderWindow *window);
 void game(sfRenderWindow *window, size_t music, bool game);
 bool evt_close(sfEvent *event, sfRenderWindow *window);
 sfRenderWindow *window_create(void);
-void destroy_game(sfSprite *back, sfTexture *texture,
-		  sfRenderWindow *window, piano_t *piano);
+void destroy_game(sfSprite *back, sfTexture *texture, piano_t *piano);
 piano_t create_piano(const char *partition);
 void collision_piano(piano_t *piano, sfRenderWindow *window, sfEvent *event);
 bool hit_point_rec(sfVector2i *point, sfRectangleShape *rec);
